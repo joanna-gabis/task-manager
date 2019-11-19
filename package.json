@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "env-cmd -f ./config/test.env jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -15,15 +18,18 @@
     "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.3.0-beta2",
     "mongoose": "^5.6.9",
     "multer": "^1.4.2",
+    "save-dev": "0.0.1-security",
     "sharp": "^0.23.2",
     "validator": "^11.1.0"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   }
 }
